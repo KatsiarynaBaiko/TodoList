@@ -1,0 +1,649 @@
+.main {
+    padding: 40px 0 20px;
+    // display: none;
+}
+
+.main-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0px -15px;
+    flex-wrap: wrap;
+
+    @media (max-width: 1005px) {
+        justify-content: space-around;
+    }
+}
+
+
+// Make ToDo
+
+.make-todo {
+    margin: 0px 15px;
+    width: 30%;
+
+    @media (max-width: 1005px) {
+        width: 45%;
+        margin: 0px 15px 35px;
+    }
+
+    @media (max-width: 650px) {
+        width: 80%;
+    }
+}
+
+.make-todo__add {
+    @include df-jcsp-alc;
+    @include styleTasks;
+
+    @media (max-width: 650px) {
+        @include styleTasks650;
+    }
+
+    &__title {
+        @include h3;
+
+        @media (max-width: 800px) {
+            @include h3800px;
+        }
+
+        @media (max-width: 550px) {
+            @include h3550px;
+        }
+    }
+
+    &__buttons {
+        @include df-jcsp-alc;
+        padding: 0 0 5px 0;
+    }
+}
+
+.make-todo__buttons__button-add {
+    @include btnTodo;
+    margin: 0 15px;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.make-todo__buttons__button-delete {
+    @include btnTodo;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.fa-solid {
+    @include icons;
+}
+
+.fa-plus {
+    color: $green;
+}
+
+.fa-trash-can {
+    color: $orange;
+}
+
+
+.make-todo__counter {
+    @include df-jcsp-alc;
+    @include styleTasks;
+
+    @media (max-width: 650px) {
+        @include styleTasks650;
+    }
+}
+
+.counter-span {
+    @include counter;
+
+    @media (max-width: 800px) {
+        @include counter800;
+    }
+
+    @media (max-width: 550px) {
+        @include counter550;
+    }
+
+}
+
+.make-todo__counter__count {
+    @include counter;
+
+    @media (max-width: 800px) {
+        @include counter800;
+    }
+
+    @media (max-width: 550px) {
+        @include counter550;
+    }
+}
+
+
+.make-todo__list {
+    @include styleCardOutise;
+}
+
+.make-todo__list__card {
+    @include styleCardInside;
+    // margin-bottom: 20px; !!!!
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.todo-span {
+    @include spanTodo;
+    margin-bottom: 5px;
+    border-bottom: 2px solid rgba($color: $pink, $alpha: 0.7);
+
+    @media (max-width: 800px) {
+        @include spanTodo800;
+    }
+
+    @media (max-width: 550px) {
+        @include spanTodo550;
+    }
+}
+
+.make-todo__card__title {
+    @include cardTitle;
+    margin-bottom: 10px;
+
+    @media (max-width: 800px) {
+        @include cardTitle800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardTitle550;
+    }
+}
+
+.make-todo__card__description {
+    @include cardDescription;
+    margin-bottom: 10px;
+
+    @media (max-width: 800px) {
+        @include cardDescription800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardDescription550;
+    }
+}
+
+.make-todo__card__duedate {
+    @include cardDuedate;
+    margin-bottom: 10px;
+
+    @media (max-width: 550px) {
+        @include cardDuedate550;
+    }
+}
+
+.make-todo__card__action {
+    @include df-jcsp-alc;
+
+    @media (max-width: 760px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @media (max-width: 650px) {
+        @include df-jcsp-alc;
+        flex-direction: row;
+    }
+
+    @media (max-width: 430px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.make-todo__card__author {
+    @include cardAuthor;
+
+    @media (max-width: 800px) {
+        @include cardAuthor800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardAuthor550;
+    }
+
+}
+
+.make-todo__action__buttons {
+    @include df-jcsp-alc;
+    padding: 0 0px 5px 0;
+}
+
+.make-todo__action__button-forward {
+    @include btnTodo;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.make-todo__action__button-delete {
+    @include btnTodo;
+    margin: 0 15px;
+
+    @media (max-width: 760px) {
+        margin: 0 15px 0px 0;
+    }
+
+    @media (max-width: 650px) {
+        margin: 0 15px;
+    }
+
+    @media (max-width: 430px) {
+        margin: 0 15px 0px 0;
+    }
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+// .fa-sharp {}
+
+.fa-share {
+    color: $green;
+}
+
+
+// In progress 
+
+.inprogress {
+    margin: 0px 15px;
+    width: 30%;
+
+    @media (max-width: 1005px) {
+        width: 45%;
+        margin: 0px 15px 35px;
+    }
+
+    @media (max-width: 650px) {
+        width: 80%;
+    }
+}
+
+.inprogress__process {
+    @include df-jcsp-alc;
+    @include styleTasks;
+
+    @media (max-width: 650px) {
+        @include styleTasks650;
+    }
+
+    &__title {
+        @include h3;
+
+        @media (max-width: 800px) {
+            @include h3800px;
+        }
+
+        @media (max-width: 550px) {
+            @include h3550px;
+        }
+    }
+
+    &__buttons {
+        @include df-jcsp-alc;
+        padding: 0 0 5px 0;
+    }
+}
+
+.inprogress__process__button-delete {
+    @include btnTodo;
+    margin-left: 0 15px;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.inprogress__counter {
+    @include df-jcsp-alc;
+    @include styleTasks;
+
+    @media (max-width: 650px) {
+        @include styleTasks650;
+    }
+}
+
+.inprogress__counter__count {
+    @include counter;
+
+    @media (max-width: 800px) {
+        @include counter800;
+    }
+
+    @media (max-width: 550px) {
+        @include counter550;
+    }
+}
+
+.inprogress__list {
+    @include styleCardOutise;
+}
+
+.inprogress__list__card {
+    @include styleCardInside;
+    // margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.inprogress__card__title {
+    @include cardTitle;
+    margin-bottom: 10px;
+
+    @media (max-width: 800px) {
+        @include cardTitle800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardTitle550;
+    }
+}
+
+.inprogress__card__description {
+    @include cardDescription;
+    margin-bottom: 10px;
+
+    @media (max-width: 800px) {
+        @include cardDescription800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardDescription550;
+    }
+}
+
+.inprogress__card__duedate {
+    @include cardDuedate;
+    margin-bottom: 10px;
+
+    @media (max-width: 550px) {
+        @include cardDuedate550;
+    }
+}
+
+.inprogress__card__action {
+    @include df-jcsp-alc;
+
+    @media (max-width: 760px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @media (max-width: 650px) {
+        @include df-jcsp-alc;
+        flex-direction: row;
+    }
+
+    @media (max-width: 430px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.inprogress__action__author {
+    @include cardAuthor;
+
+    @media (max-width: 800px) {
+        @include cardAuthor800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardAuthor550;
+    }
+}
+
+.inprogress__action__buttons {
+    @include df-jcsp-alc;
+    padding: 0 0px 5px 0;
+
+}
+
+.inprogress__action__button-return {
+    @include btnTodo;
+    margin-left: 15px;
+
+    @media (max-width: 760px) {
+        margin: 0;
+    }
+
+    @media (max-width: 650px) {
+        margin-left: 15px;
+    }
+
+    @media (max-width: 430px) {
+        margin: 0;
+    }
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.inprogress__action__button-forward {
+    @include btnTodo;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.inprogress__action__button-delete {
+    @include btnTodo;
+    margin: 0 15px;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.fa-reply {
+    color: $pink;
+}
+
+// Done
+
+.done {
+    margin: 0px 15px;
+    width: 30%;
+
+    @media (max-width: 1005px) {
+        width: 45%;
+    }
+
+    @media (max-width: 650px) {
+        width: 80%;
+    }
+}
+
+.done__process {
+    @include df-jcsp-alc;
+    @include styleTasks;
+
+    @media (max-width: 650px) {
+        @include styleTasks650;
+    }
+
+    &__title {
+        @include h3;
+
+        @media (max-width: 800px) {
+            @include h3800px;
+        }
+
+        @media (max-width: 550px) {
+            @include h3550px;
+        }
+    }
+
+    &__buttons {
+        @include df-jcsp-alc;
+        padding: 0 0 5px 0;
+    }
+}
+
+.done__process__button-delete {
+    @include btnTodo;
+    margin-left: 0 15px;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+.done__counter {
+    @include df-jcsp-alc;
+    @include styleTasks;
+
+    @media (max-width: 650px) {
+        @include styleTasks650;
+    }
+}
+
+.done__counter__count {
+    @include counter;
+
+    @media (max-width: 800px) {
+        @include counter800;
+    }
+
+    @media (max-width: 550px) {
+        @include counter550;
+    }
+}
+
+.done__list {
+    @include styleCardOutise;
+}
+
+.done__list__card {
+    @include styleCardInside;
+    // margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.done__card__title {
+    @include cardTitle;
+    margin-bottom: 10px;
+
+    @media (max-width: 800px) {
+        @include cardTitle800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardTitle550;
+    }
+}
+
+.done__card__description {
+    @include cardDescription;
+    margin-bottom: 10px;
+
+    @media (max-width: 800px) {
+        @include cardDescription800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardDescription550;
+    }
+}
+
+.done__card__duedate {
+    @include cardDuedate;
+    margin-bottom: 10px;
+
+    @media (max-width: 550px) {
+        @include cardDuedate550;
+    }
+}
+
+.done__card__action {
+    @include df-jcsp-alc;
+
+    @media (max-width: 760px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @media (max-width: 650px) {
+        @include df-jcsp-alc;
+        flex-direction: row;
+    }
+
+    @media (max-width: 430px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.done__action__author {
+    @include cardAuthor;
+
+    @media (max-width: 800px) {
+        @include cardAuthor800;
+    }
+
+    @media (max-width: 550px) {
+        @include cardAuthor550;
+    }
+}
+
+.done__action__buttons {
+    @include df-jcsp-alc;
+    padding: 0 0px 5px 0;
+}
+
+.done__action__button-return {
+    @include btnTodo;
+    margin: 0 15px;
+
+    @media (max-width: 760px) {
+        margin: 0 15px 0px 0;
+    }
+
+    @media (max-width: 650px) {
+        margin: 0 15px;
+    }
+
+    @media (max-width: 430px) {
+        margin: 0 15px 0px 0;
+    }
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}
+
+
+.done__action__button-delete {
+    @include btnTodo;
+
+    &:hover {
+        @include btnTodoHover;
+    }
+}

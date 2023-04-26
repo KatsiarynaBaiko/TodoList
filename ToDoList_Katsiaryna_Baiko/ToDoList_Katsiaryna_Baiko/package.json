@@ -1,0 +1,23 @@
+{
+  "name": "todolist_katsiaryna_baiko",
+  "version": "1.0.0",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "description": "To Do List by Katsiaryna Baiko",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [
+    "HTML",
+    "SCSS",
+    "JS"
+  ],
+  "author": "Katsiaryna Baiko",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  }
+}

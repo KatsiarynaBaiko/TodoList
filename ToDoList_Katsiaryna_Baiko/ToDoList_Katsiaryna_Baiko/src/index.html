@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/index.scss">
+    <link rel="icon" href="favicon.ico">
+    <title>ToDo List</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-wrap">
+                    <div class="header__logo">
+                        <p>Simpsons ToDo</p>
+                    </div>
+                    <div class="header__title">
+                        <p>What can i do taday</p>
+                    </div>
+                    <div class="header__date" id="header__date">
+                        28.03.2023
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <main class="main">
+            <div class="container">
+                <div class="main-wrap">
+                    <!-- //Make todo -->
+                    <div class="make-todo">
+                        <div class="make-todo__add">
+                            <h3 class="make-todo__add__title">Make ToDo</h3>
+                            <div class="make-todo__add__buttons">
+                                <button class="make-todo__buttons__button-add" id="make-todo__buttons__button-add" type="button">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <button class="make-todo__buttons__button-delete" id="make-todo__buttons__button-delete" type="button">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="make-todo__counter">
+                            <span class="counter-span">Total:</span>
+                            <div class="make-todo__counter__count" id="make-todo__counter__count">0</div>
+                        </div>
+                        <div class="make-todo__list">
+                            <!-- //функция renderMakeTodo -->
+                            <!-- <div class="make-todo__list__card">
+                                <span class="todo-span">ToDo</span>
+                                <div class="make-todo__card__title">Title</div>
+                                <div class="make-todo__card__description">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, obcaecati.</p>
+                                </div>
+                                <div class="make-todo__card__duedate">07.04.2023</div>
+                                <div class="make-todo__card__action">
+                                    <div class="make-todo__card__author">Author</div>
+                                    <div class="make-todo__action__buttons">
+                                        <button class="make-todo__action__button-delete" type="button">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                        <button class="make-todo__action__button-forward" type="button">
+                                            <i class="fa-sharp fa-solid fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- // In progress -->
+                    <div class="inprogress">
+                        <div class="inprogress__process">
+                            <h3 class="inprogress__process__title">In Progress</h3>
+                            <div class="inprogress__process__buttons">
+                                <button class="inprogress__process__button-delete" id="inprogress__process__button-delete" type="button">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="inprogress__counter">
+                            <span class="counter-span">Total:</span>
+                            <div class="inprogress__counter__count" id="inprogress__counter__count">0</div>
+                        </div>
+                        <div class="inprogress__list">
+                            <!-- //функция renderinPtogress -->
+                            <!-- <div class="inprogress__list__card">
+                                <span class="todo-span">ToDo</span>
+                                <div class="inprogress__card__title">Title</div>
+                                <div class="inprogress__card__description">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, obcaecati.</p>
+                                </div>
+                                <div class="inprogress__card__duedate">07.04.2023</div>
+                                <div class="inprogress__card__action">
+                                    <div class="inprogress__action__author">Author</div>
+                                    <div class="inprogress__action__buttons">
+                                        <button class="inprogress__action__button-return">
+                                            <i class="fa-solid fa-reply"></i>
+                                        </button>
+                                        <button class="inprogress__action__button-delete">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                        <button class="inprogress__action__button-forward">
+                                            <i class="fa-sharp fa-solid fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- // Done -->
+                    <div class="done">
+                        <div class="done__process">
+                            <h3 class="done__process__title">Done</h3>
+                            <div class="done__process__buttons">
+                                <button class="done__process__button-delete" id="done__process__button-delete">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="done__counter">
+                            <span class="counter-span">Total:</span>
+                            <div class="done__counter__count" id="done__counter__count">0</div>
+                        </div>
+                        <div class="done__list">
+                            <!-- //функция renderDone -->
+                            <!-- <div class="done__list__card">
+                                <span class="todo-span">ToDo</span>
+                                <div class="done__card__title">Title</div>
+                                <div class="done__card__description">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, obcaecati.</p>
+                                </div>
+                                <div class="done__card__duedate">07.04.2023</div>
+                                <div class="done__card__action">
+                                    <div class="done__action__author">Author</div>
+                                    <div class="done__action__buttons">
+                                        <button class="done__action__button-return">
+                                            <i class="fa-solid fa-reply"></i>
+                                        </button>
+                                        <button class="done__action__button-delete">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <div class="popup" id="popup">
+            <form action="#" name="popup-form" method="get" class="popup-form" id="popup-form">
+                <div class="popup-form__header">
+                    <h3 class="popup-form__header__title">Fill in all reduired fields</h3>
+                    <button class="popup-form__header__button-x" id="popup-form__header__button-x" type="button">x</button>
+                </div>
+                <div class="popup-form___item">
+                    <label for="popup-title">Title:</label>
+                    <input type="text" class="popup-title" id="popup-title" placeholder="Enter title">
+                    <!-- <div class="popup-form__message" id="popup-form__message-for-title"></div> -->
+                    <small>error</small>
+                </div>
+                <div class="popup-form___item">
+                    <label for="popup-description">Description:</label>
+                    <textarea name="popup-description" id="popup-description" class="popup-description"
+                        placeholder="Enter description for your notice"></textarea>
+                    <!-- <div class="popup-form__message" id="popup-form__message-for-description"></div> -->
+                    <small>error</small>
+                </div>
+                <div class="popup-form___item">
+                    <label for="popup-author">Author:</label>
+                    <input type="text" class="popup-author" id="popup-author" placeholder="Who is author?">
+                    <!-- <div class="popup-form__message" id="popup-form__message-for-author"></div>  -->
+                    <small>error</small>
+                </div>
+                <div class="popup-form___item">
+                    <label for="popup-duedate">Due date:</label>
+                    <input type="date" class="popup-duedate" id="popup-duedate" required>
+                    <!-- <div class="popup-form__message-for-duedate" id="popup-form__message-for-duedate"></div> -->
+                    <!-- <small>error</small> -->
+                </div>
+                <div class="popup-form__buttons">
+                    <button class="popup-form__buttons__button-create" type="submit" id="popup-form__buttons__button-create">Create</button>
+                    <button class="popup-form__buttons__button-cancel" type="button" id="popup-form__buttons__button-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    
+        <!-- <section class="footer">
+            <div class="container">
+                <div class="footer__text">
+                    <p>Copyright &copy; 2023 ToDoList By Katsiaryna Baiko</p>
+                </div>
+                <ul class="footer__socmedia">
+                    <li class="footer__socmedia__links">
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin icon"></i>
+                        </a>
+                    </li>
+                    <li class="footer__socmedia__links">
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="footer__socmedia__links">
+                        <a href="#">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section> -->
+    
+        <footer class="footer">
+                    <div class="container">
+                <div class="footer__text">
+                    <p>Copyright &copy; 2023 ToDoList By Katsiaryna Baiko</p>
+                </div>
+                <ul class="footer__socmedia">
+                    <li class="footer__socmedia__links">
+                        <a href="https://www.linkedin.com/in/katsiarynabaiko/">
+                            <i class="fa-brands fa-linkedin icon"></i>
+                        </a>
+                    </li>
+                    <li class="footer__socmedia__links">
+                        <a href="https://github.com/KatsiarynaBaiko">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="footer__socmedia__links">
+                        <a href="https://www.instagram.com/katerina.baiko/">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

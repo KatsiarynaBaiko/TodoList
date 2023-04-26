@@ -1,0 +1,323 @@
+.popup {
+    background-color: rgba($color: $black, $alpha: 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s;
+    overflow-y: auto; // оставляем скролл только по оси y
+    overflow-x: hidden;
+
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.open .popup-form {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.popup-form {
+    display: block;
+    margin: 7% auto 0;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    // background-color: rgba($color: $blue, $alpha: 0.2);
+    background-color: $white;
+    transition: 0.8s; // анимация popup
+    opacity: 0;
+    transform: translate(0px, -100%); //убираем popup вверх на 100%
+
+    @media (max-width: 800px) {
+        margin: 13% auto 0;
+        width: 60%;
+    }
+
+    @media (max-width: 610px) {
+        width: 70%;
+    }
+
+    @media (max-width: 500px) {
+        margin: 17% auto 0;
+        width: 80%;
+    }
+
+    @media (max-width: 390px) {
+        margin: 22% auto 0;
+        width: 90%;
+    }
+
+    @media (max-width: 390px) {
+        margin: 30% auto 0;
+    }
+}
+
+.popup-form__header {
+    @include df-jcsp-alc;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid $orange;
+
+    @media (max-width: 800px) {
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 610px) {
+        padding-bottom: 7px;
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 350px) {
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        @include TextSimpson;
+        font-size: $_30px;
+        line-height: 34px;
+        color: $orange;
+        margin-right: 15px;
+
+        @media (max-width: 610px) {
+            font-size: $_28px;
+            line-height: 32px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: $_24px;
+            line-height: 30px;
+        }
+
+        @media (max-width: 350px) {
+            font-size: $_17px;
+            line-height: 25px;
+        }
+    }
+
+    &__button-x {
+        @include TextSimpson;
+        color: $orange;
+        font-size: $_30px;
+        // line-height: 34px;
+        background-color: transparent;
+        border: 2px solid $orange;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-left: 15px;
+
+        @media (max-width: 610px) {
+            font-size: $_28px;
+            line-height: 32px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: $_24px;
+            line-height: 30px;
+        }
+
+        @media (max-width: 350px) {
+            font-size: $_17px;
+            line-height: 25px;
+            width: 25px;
+            height: 25px;
+        }
+
+        &:hover {
+            background-color: $orange;
+            color: $white;
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+// .popup-form__message-for-title,
+// .popup-form__message-for-description,
+// .popup-form__message-for-author,
+// .popup-form__message
+
+.popup-form___item small {
+    @include blankMessage;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    visibility: hidden;
+
+    @media (max-width: 610px) {
+        @include blankMessage610;
+    }
+}
+
+.popup-form___item.error small {
+    visibility: visible;
+}
+
+.popup-form___item {
+    margin-bottom: 20px;
+    position: relative;
+
+    @media (max-width: 800px) {
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 610px) {
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 350px) {
+        margin-bottom: 7px;
+    }
+}
+
+// .popup-title {}
+
+// .popup-author {}
+
+// .popup-duedate {}
+
+
+// .popup-form___texterea {
+//     margin-bottom: 15px;
+// }
+
+.popup-description {
+    height: 200px;
+}
+
+.popup-form__buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__button-create {
+        @include TextSimpson;
+        @include popupBtn;
+        background-color: $green;
+        border: 2px solid $green;
+        margin-right: 15px;
+
+        @media (max-width: 610px) {
+            @include popupBtn610;
+        }
+
+        @media (max-width: 500px) {
+            @include popupBtn500;
+        }
+
+        @media (max-width: 350px) {
+            @include popupBtn350;
+        }
+
+        &:hover {
+            background-color: $white;
+            color: $green;
+            transform: scale(1.1);
+        }
+    }
+
+    &__button-cancel {
+        @include TextSimpson;
+        @include popupBtn;
+        background-color: $orange;
+        border: 2px solid $orange;
+        margin-left: 15px;
+
+        @media (max-width: 610px) {
+            @include popupBtn610;
+        }
+
+        @media (max-width: 500px) {
+            @include popupBtn500;
+        }
+
+        @media (max-width: 350px) {
+            @include popupBtn350;
+        }
+
+        &:hover {
+            background-color: $white;
+            color: $orange;
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+input,
+input [type="text"],
+textarea {
+    border: 2px solid $blue;
+    border-radius: 7px;
+    outline: none;
+    padding: 2px 2px;
+    max-width: 100%;
+}
+
+label,
+input,
+textarea {
+    width: 100%;
+    display: block;
+    font-family: 'Homer Simpson Revised', 'Kurale';
+    font-weight: 400;
+    font-size: $_24px;
+    line-height: 28x;
+    color: $blue;
+    resize: none;
+
+    @media (max-width: 610px) {
+        font-size: $_22px;
+        line-height: 26px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: $_20px;
+        line-height: 24px;
+    }
+
+    @media (max-width: 350px) {
+        font-size: $_15px;
+        line-height: 20px;
+    }
+}
+
+input [type="date"] {
+    color: $grey;
+}
+
+
+input::placeholder {
+    color: $grey;
+}
+
+textarea::placeholder {
+    color: $grey;
+}
+
+
+.popup-form___item.success input {
+    border-color: $green;
+}
+
+.popup-form___item.success textarea {
+    border-color: $green;
+}
+
+.popup-form___item.error input {
+    border-color: $orange;
+}
+
+.popup-form___item.error textarea {
+    border-color: $orange;
+}
